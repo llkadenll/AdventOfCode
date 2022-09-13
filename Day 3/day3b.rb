@@ -11,11 +11,11 @@ def read_file(file_name)
 end
 
 def get_most_common_bit(column)
-  return column.sort.reverse.join.scan(/[0-1]/).tally.max_by{|k,v| v}[0]
+  return column.sort.reverse.tally.max_by{|k,v| v}[0]
 end
 
 def get_least_common_bit(column)
-  return column.sort.join.scan(/[0-1]/).tally.min_by{|k,v| v}[0]
+  return column.sort.tally.min_by{|k,v| v}[0]
 end
 
 def get_oxygen_generator_rating(report)
